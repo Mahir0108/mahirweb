@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Storybook</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            overflow: hidden; /* Prevents scrollbars */
+        }
+
+        #story-container {
+            width: 800px; /* Adjust as needed */
+            height: 600px; /* Adjust as needed */
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0; /* Initially hide all pages */
+            transition: opacity 0.5s ease-in-out; /* Smooth fade-in/out */
+        }
+
+        .page.active {
+            opacity: 1; /* Show the active page */
+        }
+
+        .page img {
+            max-width: 90%;
+            max-height: 70%;
+            margin-bottom: 20px;
+        }
+
+        .page h2 {
+            margin-top: 0;
+        }
+
+        #controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="story-container">
+        <div class="page active">  <img src="https://m.media-amazon.com/images/I/7133WJ+fmZL._AC_UF1000,1000_QL80_.jpg" alt="Page 1 Image">
+            <h2>Page 1: The Beginning</h2>
+            <p>There was once a grumpy tree. It was the biggest tree in the forest, and it didn't need its shadow for anything. However, the tree would never share its shadow with any of the animals, and wouldn't let them come anywhere near.
+ (</p>
+        </div>
+        <div class="page">
+            <img src="https://ik.imagekit.io/storybird/images/e939ada8-9f4f-4728-8052-0c345b4869c6/0_561167249.webp?tr=q-80" alt="Page 2 Image">
+            <h2>Page 2: </h2>
+            <p>One year, the autumn and winter were terrible, and the tree, without its leaves, was going to die of cold. A little girl, who went to live with her grandma that winter, found the tree shivering, so she went to get a great big scarf to warm the tree up. The Spirit of the Forest appeared and told the little girl why that tree was so solitary, and why no one would help him. Even so, the girl decided to put the scarf on the tree.</p>
+        </div>
+        <div class="page">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDUiyRh-kd2agoAHoujCagWR0vf699E4jOQQ&s" alt="Page 3 Image">
+            <h2>Page 3: The Conclusion</h2>
+            <p>And so, The next springtime, the tree had learned from the girl's generosity, and when she sat next to the trunk the tree bent down to shade her from the sun. The Spirit of the Forest saw this and went to tell all the animals. He told them that from then on they would be able to shade themselves well, because the tree had learned that having kind and generous beings around makes the world a much better place to live in.
+</p>
+        </div>
+        </div>
+
+    <div id="controls">
+        <button onclick="prevPage()">Previous Page</button>
+        <button onclick="nextPage()">Next Page</button>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.page');
+
+        function showPage(pageIndex) {
+            pages.forEach((page, index) => {
+                if (index === pageIndex) {
+                    page.classList.add('active');
+                } else {
+                    page.classList.remove('active');
+                }
+            });
+        }
+
+        function nextPage() {
+            currentPage = Math.min(currentPage + 1, pages.length - 1);
+            showPage(currentPage);
+        }
+
+        function prevPage() {
+            currentPage = Math.max(currentPage - 1, 0);
+            showPage(currentPage);
+        }
+
+        showPage(0); // Show the first page initially
+    </script>
+
+</body>
+</html>
