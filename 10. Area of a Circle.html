@@ -1,0 +1,54 @@
+10. Area of a Circle
+Concept: Functions, parameters, built-in constant (Math.PI).
+Code:
+function areaOfCircle(radius) {
+  return Math.PI * radius * radius;
+}
+
+let radius = parseFloat(prompt("Enter the radius:"));
+let area = areaOfCircle(radius);
+alert("Area of the circle: " + area.toFixed(2)); 
+
+
+11. Array of Numbers
+Concept: Arrays, accessing elements.
+Code:
+let numbers = [10, 20, 30, 40, 50];
+alert("First number: " + numbers[0]); 
+alert("Last number: " + numbers[numbers.length - 1]);
+
+
+12. Sum of Array Elements
+Concept: Arrays, for loop, accumulating values.
+Code:
+let numbers = [1, 2, 3, 4, 5];
+let sum = 0;
+for (let i = 0; i < numbers.length; i++) {
+  sum += numbers[i];
+}
+alert("Sum of array elements: " + sum);
+
+
+13. Find Largest Number
+Concept: Arrays, for loop, conditional statements.
+Code:
+let numbers = [5, 12, 3, 8, 1];
+let largest = numbers[0]; 
+for (let i = 1; i < numbers.length; i++) {
+  if (numbers[i] > largest) {
+    largest = numbers[i];
+  }
+}
+alert("Largest number: " + largest);
+
+
+14. Change Element Style
+Concept: Document Object Model (DOM), selecting elements, modifying style.
+Code:
+<button id="myButton">Click Me</button>
+
+<script>
+  let button = document.getElementById("myButton");
+  button.style.backgroundColor = "blue";
+  button.style.color = "white";
+</script>
