@@ -1,0 +1,115 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Shopping Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #ff4500;
+        }
+        .item {
+            background-color: #fffacd;
+            border: 2px solid #333;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .cart {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #90ee90;
+            display: inline-block;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Kids Shop!</h1>
+    <p>Click the button to add an item to the cart.</p>
+
+  
+   <div class="item">
+        <p>🎈 Balloon - ₹50</p>
+        <button onclick="addToCart('Balloon')">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <p>🧸 Teddy Bear - ₹200</p>
+        <button onclick="addToCart('Teddy Bear')">Add to Cart</button>
+    </div>
+
+    <div class="item">
+        <p>⚽football- ₹1000</p>
+        <button onclick="addToCart('football')">Add to Cart</button>
+    </div>
+
+ <div class="item">
+        <p>🎧headphones- ₹5000</p>
+        <button onclick="addToCart('headphones')">Add to Cart</button>
+    </div>
+
+ <div class="item">
+        <p>/̵͇̿̿/'̿'̿ ̿ ̿̿ ̿̿ ̿̿gun(desi kattha) - ₹2000</p>
+        <button onclick="addToCart('gun')">Add to Cart</button>
+    </div>
+
+ <div class="item">
+        <p>🍫chocolate- ₹500</p>
+        <button onclick="addToCart('chocolate)">Add to Cart</button>
+    </div>
+
+ <div class="item">
+        <p>🏎️💨remote control car - ₹10000</p>
+        <button onclick="addToCart('remote control car')">Add to Cart</button>
+    </div>
+
+ <div class="item">
+        <p>🚲cycle - ₹15000</p>
+        <button onclick="addToCart('cycle ')">Add to Cart</button>
+    </div>
+
+ <div class="item">
+        <p>,🚀rocket - ₹90000</p>
+        <button onclick="addToCart('rocket ')">Add to Cart</button>
+    </div>
+
+ <div class="item">
+        <p>✈️areoplane - ₹100000</p>
+        <button onclick="addToCart('areoplane')">Add to Cart</button>
+    </div>
+
+
+    <div class="cart">
+        <h3>Shopping Cart</h3>
+        <p id="cartList">Cart is empty</p>
+        <h3>Total: ₹<span id="totalAmount">0</span></h3>
+    </div>
+
+    <script>
+        let totalAmount = 0;
+
+        function addToCart(item, price) {
+            let cart = document.getElementById("cartList");
+            let total = document.getElementById("totalAmount");
+
+            // Update cart items
+            if (cart.innerHTML === "Cart is empty") {
+                cart.innerHTML = item;
+            } else {
+                cart.innerHTML += ", " + item;
+            }
+
+            // Update total amount
+            totalAmount += price;
+            total.innerHTML = totalAmount;
+        }
+    </script>
+
+</body>
+</html>

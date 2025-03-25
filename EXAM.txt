@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>  EXAM </title> 
+</head>
+<body bgcolor="Rainbow">
+<h1> Birthday chart </h1>
+<table border="2">
+<h1> Friends </h1>
+<li> Sarvesh
+<li> Jiyansh
+<li> Swayam
+<li> Heet
+<li> Mudit
+<li> Swati Ma'am
+<li> Kaveri Ma'am
+<li> Pranoti Ma'am
+<li> Uttara Ma'am
+<li> Reshma Ma'am
+<li> Arpita Ma'am
+</body>
+</html>
